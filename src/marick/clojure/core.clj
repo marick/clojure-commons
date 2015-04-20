@@ -62,6 +62,13 @@
 
 ;;; Namespaces
 
+(defmacro defalias  ;; from `useful`
+  "Defines an alias for a var: a new var with the same root binding (if
+any) and similar metadata. The metadata of the alias is its initial
+metadata (as provided by def) merged into the metadata of the original."
+  [dst src]
+  `(alias-var (quote ~dst) (var ~src)))
+
 (letfn [(move-var [var sym]
           (let [sym (with-meta sym (assoc (meta var) :ns *ns*))]
             (if (.hasRoot var)
