@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "0.3.0"
+(defproject marick/clojure-commons "0.3.1"
   :description "Marick's clojure utilities"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -20,6 +20,7 @@
 
   ;; For Clojure snapshots
   :repositories {"sonatype-oss-public" "https://oss.sonatype.org/content/groups/public/"}
+  :deploy-repositories [["releases" :clojars]]
 )
 
   
