@@ -1,6 +1,6 @@
 (ns ^{:doc "Support for different clojure versions"}
   marick.clojure.versions
-  (:require midje.clojure.backwards-compatibility))
+  (:require marick.clojure.backwards-compatibility))
 
 (defmacro when-1-4 [& body] 
   (when (= (:minor *clojure-version*) 4)
