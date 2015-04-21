@@ -2,8 +2,11 @@
   marick.clojure.core
   (:use marick.clojure.versions)
   (:require clojure.pprint
+            clojure.string
             clojure.set
             swiss.arrows
+            slingshot.slingshot
+            environ.core
             marick.clojure.backwards-compatibility))
             
 ;;; Types and pseudo types
@@ -38,6 +41,10 @@
   (or (list? x)
       (seq? x)))
 
+(defn namespace? [x]
+  (instance? clojure.lang.Namespace x))
+
+
 
 ;;; Annoyances
 
@@ -47,6 +54,9 @@
 (def any? (strictly some))
 
 (def not-empty? (strictly seq))
+
+(def third #(nth % 2))
+(def fourth #(nth % 3))
 
 
 ;;; Vars
@@ -97,12 +107,22 @@ metadata (as provided by def) merged into the metadata of the original."
       (require ns)
       (doseq [[sym ^clojure.lang.Var var] (ns-publics ns)]
         (move-var var sym))))
-  
+
   (defn immigrate-from
     "Like `immigrate`, except wth a list of named symbols."
     [ns symbols]
     (doseq [sym symbols]
-      (move-var (ns-resolve ns sym) sym))))
+      (move-var (ns-resolve ns sym) sym)))
+
+  (defn immigrate-prefixed 
+    "Like `immigrate`, except that each immigrated var is prefixed with `prefix`"
+    [ns prefix]
+    (doseq [[sym var] (ns-publics ns)]
+      (move-var (ns-resolve ns sym) (symbol (str prefix (name sym)))))))
+
+;;; Strings
+
+(immigrate-prefixed 'clojure.string "str-")     
 
 ;;; Maps
 
@@ -148,6 +168,8 @@ metadata (as provided by def) merged into the metadata of the original."
 
 ;;; Sequences
 
+(def without-nils (partial keep identity))
+
 (defn vertical-slices
   "Given N sequences, return one sequence whose first element
    is a sequence of all the first elements, etc."
@@ -187,8 +209,6 @@ metadata (as provided by def) merged into the metadata of the original."
 
 ;;; Control flow
 
-;;; Control flow
-
 (defmacro pred-cond 
   "Checks each predicate against the item, returning the corresponding 
    result if it finds a match, otherwise returning nil.
@@ -200,7 +220,7 @@ metadata (as provided by def) merged into the metadata of the original."
                  ~result
                  (pred-cond ~item ~@preds+results))))
 
-(immigrate-from 'swiss.arrows '[-<>])
+(immigrate-from 'swiss.arrows '[-<> -<>> -!> -!>> -!<> some-<> some-<>>])
 
 ;;; Printing
 
@@ -209,3 +229,17 @@ metadata (as provided by def) merged into the metadata of the original."
 ;;; Compatibility
 
 (immigrate 'marick.clojure.backwards-compatibility)
+
+;;; Exceptions
+
+(immigrate-from 'slingshot.slingshot '[try+ throw+])
+
+;;; Environment
+
+(defn env-nil-ok [key]
+  (environ.core/env key))
+
+;;; Random
+
+(defn guid [] (str (java.util.UUID/randomUUID)))
+(def uuid guid)

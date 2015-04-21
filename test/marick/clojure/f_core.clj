@@ -34,7 +34,7 @@
   \c               falsey)
 
 
-;; ;;; Vars
+;;; Vars
 
 (def #^:dynamic var-with-root :original-value)
 (fact "can get the root value"
@@ -45,6 +45,12 @@
 
 (fact "can get a namespace-qualified variable name"
   (var-name #'var-with-root) => 'marick.clojure.f-core/var-with-root)
+
+;;; Strings
+
+(fact "string functions are available, prefixed with `str-`"
+  (str-join ", " ["1", "2", "3"]) => "1, 2, 3")
+
 
 ;;; Maps
 
@@ -127,4 +133,16 @@
   "Don't need an :else"
   (pred-cond 1 
     even? "even") => nil)
+
+(fact "we have some swiss arrow forms"
+  (-<> 1 (- 2 <>)) => 1
+  (some-<> [] first (+ 1 <>)) => nil)
+
+(fact "we also have clojure 1.5 forms, even in earlier versions"
+  (some-> [] first inc) => nil)
+
+;;; Printing
+
+(fact "some clojure.pprint functions are immigrated"
+  (cl-format nil "1: ~A" 1) => "1: 1")
 

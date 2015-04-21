@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "0.4.0"
+(defproject marick/clojure-commons "0.5.0"
   :description "Marick's clojure utilities"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -8,6 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
+                 [environ "1.0.0"]
                  [slingshot "0.12.1"]]
 
   :profiles {:dev {:dependencies [[midje "2.0.0-SNAPSHOT" :exclusions [org.clojure/clojure]]]}
