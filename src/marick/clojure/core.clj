@@ -24,6 +24,8 @@
   (defn record? [x]
     (and (map? x) (not (classic-map? x)))))
 
+(defn big-decimal? [x]
+  (instance? java.math.BigDecimal x))
 
 (defn extended-fn? [x]
   (or (fn? x)
