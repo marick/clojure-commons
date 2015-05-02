@@ -4,8 +4,14 @@
 
 (defn env
   "Select a keyword `key` from the environment. The result is a string.
-   It is an error for the environment lookup to return `nil`. See [[env-nil-ok]]."
+   It is an error for the environment lookup to return `nil`. See [[env-nil-ok]].
 
+   Key handling and where environment values come from is per 
+   (weavejester/environ)[https://github.com/weavejester/environ]:
+
+        (env :home)          ; lowercased
+        (env :database-url)  ; would match `DATABASE_URL`
+"
   [key]
   (if-let [result (environ.core/env key)]
     result
