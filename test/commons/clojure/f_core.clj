@@ -3,19 +3,18 @@
 (require 'such.immigration)(such.immigration/namespaces-by-reference 'commons.clojure.core)
 
 (fact "checks each pred against the result of the first expression, returning if it finds a match" 
-
-  (pred-cond "abcde" 
+  (branch-on "abcde" 
     #(.contains % "xyz") "contains 'xyz'" 
     string? "string"
     :else "neither") => "string"
 
-  (pred-cond 1 
+  (branch-on 1 
     even? "even" 
     string? "string"
     :else "neither") => "neither"
   
-  "Don't need an :else"
-  (pred-cond 1 
+  ; default is nil
+  (branch-on 1 
     even? "even") => nil)
 
 ;;; Printing
