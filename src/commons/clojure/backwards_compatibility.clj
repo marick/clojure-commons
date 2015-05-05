@@ -4,15 +4,15 @@
 
 (letfn [(missing? [sym] (not (ns-resolve 'clojure.core sym)))]
 
-  (defmacro defn-once [sym & rest]
+  (defmacro ^:private defn-once [sym & rest]
     (when (missing? sym)
       `(defn ~sym ~@rest)))
 
-  (defmacro defn-once-in-core [sym & rest]
+  (defmacro ^:private defn-once-in-core [sym & rest]
     (when (missing? sym)
       `(intern 'clojure.core '~sym (fn ~@rest))))
 
-  (defmacro move-once-to-core [source-namespace syms]
+  (defmacro ^:private move-once-to-core [source-namespace syms]
     (when (missing? (first syms))
       `(do
          (require '~source-namespace)
