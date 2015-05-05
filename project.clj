@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "0.5.0"
+(defproject marick/clojure-commons "0.6.0"
   :description "Marick's clojure utilities"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -20,7 +20,13 @@
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0-beta1"]]}
              }
 
-  :plugins [[lein-midje "3.1.3"]]
+  :plugins [[lein-midje "3.1.3"]
+            [codox "0.8.11"]]
+
+  :codox {:src-dir-uri "https://github.com/marick/clojure-commons/blob/master/"
+          :src-linenum-anchor-prefix "L"
+          :output-dir "/var/tmp/clojure-commons-doc"
+          :defaults {:doc/format :markdown}}
 
   :aliases {"compatibility" ["with-profile" "+1.4:+1.5.0:+1.5.1:+1.6:+1.7" "midje" ":config" ".compatibility-test-config"]
             "travis" ["with-profile" "+1.4:+1.5.0:+1.5.1:+1.6:+1.7" "midje"]}
