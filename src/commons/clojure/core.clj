@@ -1,5 +1,5 @@
-(ns ^{:doc "Functions I wouldn't mind to see in clojure.core"}
-  commons.clojure.core
+(ns commons.clojure.core
+  "Functions I wouldn't mind seeing in clojure.core"
   (:require [such.immigration :as immigrate]))
 
 ;; I want these to be more available.

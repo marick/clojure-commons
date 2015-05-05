@@ -1,5 +1,5 @@
 # clojure-commons
-Clojure code I use a lot.
+Clojure code I use a lot. Currently under construction.
 
 [![Build Status](https://travis-ci.org/marick/clojure-commons.png?branch=master)](https://travis-ci.org/marick/clojure-commons)
 
