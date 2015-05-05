@@ -7,7 +7,7 @@ For lein: [marick/clojure-commons "0.6.0"]
 
 [![Build Status](https://travis-ci.org/marick/clojure-commons.png?branch=master)](https://travis-ci.org/marick/clojure-commons)
 
-This code adds functions from these libraries to `commons.clojure.core`:
+This code interns functions from these libraries to `commons.clojure.core`:
 
 * [scgilardi/slingshot](https://github.com/scgilardi/slingshot) by Stephen C. Gilardi
 * [rplevy/swiss-arrows](https://github.com/rplevy/swiss-arrows) by Robert Levy
