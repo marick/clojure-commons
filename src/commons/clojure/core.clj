@@ -1,8 +1,10 @@
 (ns commons.clojure.core
   "Functions I wouldn't mind seeing in clojure.core"
-  (:require [such.immigration :as immigrate]))
+  (:require [such.immigration :as immigrate]
+            ;; individual requires are needed for codox
+            clojure.set clojure.pprint slingshot.slingshot such.shorthand such.symbols
+            such.types such.vars such.versions such.better-doc such.wide-domains))
 
-;; I want these to be more available.
 (immigrate/selection 'clojure.set '[union difference subset? intersection])
 (immigrate/selection 'clojure.pprint '[pprint cl-format])
 (immigrate/selection 'slingshot.slingshot '[try+ throw+])
