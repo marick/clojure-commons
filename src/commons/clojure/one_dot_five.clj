@@ -1,4 +1,4 @@
-(ns commons.clojure.one-dot-five
+(ns ^:no-doc commons.clojure.one-dot-five
   (:refer-clojure :exclude [cond-> cond->> as-> some-> some->>]))
 
 ;; From Clojure 1.5

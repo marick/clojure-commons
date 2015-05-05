@@ -1,6 +1,6 @@
-(ns ^{:doc "Functions grabbed from newer versions of Clojure, 
-            so we can maintain backwards compatibility."}
-  commons.clojure.backwards-compatibility)
+(ns ^:no-doc commons.clojure.backwards-compatibility
+    "Functions grabbed from newer versions of Clojure, 
+     so we can maintain backwards compatibility.")
 
 (letfn [(missing? [sym] (not (ns-resolve 'clojure.core sym)))]
 
