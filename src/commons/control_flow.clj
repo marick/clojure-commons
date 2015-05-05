@@ -1,7 +1,5 @@
 (ns commons.control-flow
-  (:require [such.immigration :as immigrate]
-            swiss.arrows ; required for codox
-            ))
+  (:require [such.immigration :as immigrate]))
 (immigrate/selection 'swiss.arrows '[-<> -<>> -!> -!>> -!<> some-<> some-<>>])
 
 (defmacro branch-on

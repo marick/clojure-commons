@@ -2,6 +2,8 @@
   (:require [such.immigration :as immigrate]
             [such.vars :as vars]))
 
+(immigrate/namespaces 'such.ns)
+
 (defn alias-var  ;; from `useful`
   "Create a var with the supplied name in the current namespace, having the same
 metadata and root-binding as the supplied var."
