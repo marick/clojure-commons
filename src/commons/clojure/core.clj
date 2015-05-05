@@ -10,13 +10,11 @@
 (immigrate/selection 'slingshot.slingshot '[try+ throw+])
 
 ;; Grab suchwow functions
-(immigrate/namespaces 'such.shorthand 'such.symbols
-                      'such.types 'such.vars 'such.versions 
+(immigrate/namespaces 'such.shorthand 'such.types 
                       ;; including the overriding namespaces
                       'such.better-doc 'such.wide-domains)
 
 ;; And selected local functions:
-;(immigrate/selection 'commons.control-flow '[pred-cond -<> -<>> -!> -!>> -!<> some-<> some-<>>])
 (immigrate/namespaces 'commons.control-flow)
 (immigrate/namespaces 'commons.clojure.backwards-compatibility
                       'commons.environment
