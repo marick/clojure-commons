@@ -1,6 +1,10 @@
 # clojure-commons
 Clojure code I use a lot. Currently under construction.
 
+Available via [clojars](http://clojars.org/search?q=clojure-commons) for Clojure 1.4+  
+For lein: [marick/clojure-commons "0.6.0"]     
+[API docs](http://marick.github.io/clojure-commons/)
+
 [![Build Status](https://travis-ci.org/marick/clojure-commons.png?branch=master)](https://travis-ci.org/marick/clojure-commons)
 
 Certain functions in this library are copied or derived from the
