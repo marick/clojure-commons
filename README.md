@@ -1,7 +1,7 @@
 # clojure-commons
 Clojure code I use a lot. Currently under construction.
 
-Available via [clojars](http://clojars.org/search?q=clojure-commons) for Clojure 1.4+  
+Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.4+  
 For lein: [marick/clojure-commons "0.6.0"]     
 [API docs](http://marick.github.io/clojure-commons/)
 
