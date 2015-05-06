@@ -2,7 +2,7 @@
 Clojure code I use a lot. Currently under construction.
 
 Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.4+  
-For lein: [marick/clojure-commons "0.7.0"]     
+For lein: [marick/clojure-commons "0.7.1"]     
 [API docs](http://marick.github.io/clojure-commons/)
 
 [![Build Status](https://travis-ci.org/marick/clojure-commons.png?branch=master)](https://travis-ci.org/marick/clojure-commons)

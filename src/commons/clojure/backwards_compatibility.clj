@@ -21,4 +21,4 @@
              (intern 'clojure.core (with-meta sym# (meta var#)) var#)))))))
 
 (move-once-to-core slingshot.ex-info [ex-info ex-data])
-(move-once-to-core marick.clojure.one-dot-five [cond-> cond->> as-> some-> some->>])
+(move-once-to-core commons.clojure.one-dot-five [cond-> cond->> as-> some-> some->>])
