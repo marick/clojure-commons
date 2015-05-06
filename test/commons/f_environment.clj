@@ -1,4 +1,4 @@
-(ns commons.clojure.f-environment
+(ns commons.f-environment
   (:use midje.sweet)
   (:require [commons.environment :as subject]))
 

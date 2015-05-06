@@ -1,4 +1,4 @@
-(ns commons.clojure.f-sequences
+(ns commons.f-sequences
   (:use midje.sweet)
   (:require [commons.sequences :as subject]))
 

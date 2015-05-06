@@ -1,4 +1,4 @@
-(ns commons.clojure.f-maps
+(ns commons.f-maps
   (:use midje.sweet)
   (:require [commons.maps :as subject]))
 
