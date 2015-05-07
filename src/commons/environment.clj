@@ -1,6 +1,6 @@
 (ns commons.environment
   (:require environ.core)
-  (:require [such.util.fail :refer [fail]]))
+  (:require [such.wrongness :as !]))
 
 (defn env
   "Select a keyword `key` from the environment. The result is a string.
@@ -15,7 +15,7 @@
   [key]
   (if-let [result (environ.core/env key)]
     result
-    (fail "%s is not in the environment." key)))
+    (!/boom! "%s is not in the environment." key)))
 
 (defn env-nil-ok
   "Select a keyword `key' from the environment, returning a string.
