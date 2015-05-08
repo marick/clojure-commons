@@ -1,15 +1,15 @@
-(ns commons.f-function-makers (:require [commons.function-makers :as subject])
+(ns commons.f-function-makers (:require [commons.function-makers :as mkfn])
   (:use midje.sweet))
 
 
-(fact "mkfn:any?"
-  ((subject/mkfn:any? [odd? even?]) 1) => true
-  ((subject/mkfn:any? [pos? neg?]) 0) => false
-  ((subject/mkfn:any? [:key :word]) {:key false}) => false
-  ((subject/mkfn:any? [:key :word]) {:key false :word 3}) => true
-  ((subject/mkfn:any? [#{1 2} #{3 4}]) 3) => true
+(fact "any-pred"
+  ((mkfn/any-pred [odd? even?]) 1) => true
+  ((mkfn/any-pred [pos? neg?]) 0) => false
+  ((mkfn/any-pred [:key :word]) {:key false}) => false
+  ((mkfn/any-pred [:key :word]) {:key false :word 3}) => true
+  ((mkfn/any-pred [#{1 2} #{3 4}]) 3) => true
   ;; stops at first match
-  ((subject/mkfn:any? [(partial = 3) (fn[_](throw (new Error "boom!")))]) 3) => true
+  ((mkfn/any-pred [(partial = 3) (fn[_](throw (new Error "boom!")))]) 3) => true
   ;; Any empty list means that everything matches
-  ((subject/mkfn:any?  []) 3) => true)
+  ((mkfn/any-pred  []) 3) => true)
 

@@ -16,13 +16,13 @@
 
   (subject/conj-into {:a [1], :b [55] :c 'blah} :a 2 :b 56) => {:a [1 2], :b [55 56], :c 'blah})
 
-(fact "map-difference"
-  (subject/map-difference {} {}) => {}
-  (subject/map-difference {:a 1} {}) => {:a 1}
-  (subject/map-difference {:a 1} {:a ..irrelevant..}) => {}
-  (subject/map-difference {} {:a ..irrelevant..}) => {}
+(fact "key-difference"
+  (subject/key-difference {} {}) => {}
+  (subject/key-difference {:a 1} {}) => {:a 1}
+  (subject/key-difference {:a 1} {:a ..irrelevant..}) => {}
+  (subject/key-difference {} {:a ..irrelevant..}) => {}
 
-  (subject/map-difference {:a 1, :b 2, :c 3} {:a ..irrelevant.., :c ..irrelevant.., :d ..irrelevant..}) => {:b 2})
+  (subject/key-difference {:a 1, :b 2, :c 3} {:a ..irrelevant.., :c ..irrelevant.., :d ..irrelevant..}) => {:b 2})
 
 
 

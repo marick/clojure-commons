@@ -34,11 +34,11 @@
       (recur more
              (transform so-far k #(conj % v))))))
 
-(defn map-difference
+(defn key-difference
   "Remove (as with `dissoc`) all the keys in `original` that are in
    `unwanted`.
    
-        (map-difference {:a 1, :b 2} {:b ..irrelevant.., :c ..irrelevant..}) => {:a 1}
+        (key-difference {:a 1, :b 2} {:b ..irrelevant.., :c ..irrelevant..}) => {:a 1}
 "
 
   [original unwanted]

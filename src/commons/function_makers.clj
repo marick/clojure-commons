@@ -1,15 +1,26 @@
-(ns commons.function-makers)
+(ns commons.function-makers
+  "Functions that make other functions.
+   
+   Commonly used with a naming convention that flags such functions with
+   `mkfn`:
+   
+       (ns ...
+         (:require [commons.function-makers :as mkfn]))
+       ...
+       (def stringlike? (mkfn/any-pred string? regex?))
+")
 
-(defn mkfn:any?
+
+(defn any-pred
   "Constructs a strict predicate that takes a single argument.
    That predicate returns `true` iff any of the `preds` is 
    truthy of that argument.
    
-        (def stringlike? (mkfn:any? string? regex?))
+        (def stringlike? (mkfn:any-pred string? regex?))
         (stringlike? []) => false
         (stringlike? \"\") => true
    
-        (def has-favs? (mkfn:any? (partial some #{0 4}) odd?)
+        (def has-favs? (mkfn/any-pred (partial some #{0 4}) odd?)
         (has-favs? [2 4]) => true
         (has-favs? [1 6]) => true
    
