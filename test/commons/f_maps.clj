@@ -4,6 +4,28 @@
 
 ;;; Maps
 
+(facts "you can tack new keys onto a hashmap"
+  (subject/conj-into {}) => {}
+  (subject/conj-into {:a 1}) => {:a 1}
+
+  (subject/conj-into {} :a 1) => '{:a (1)}
+  (subject/conj-into {} :a 1) => (just {:a list?})
+
+  (subject/conj-into {:a [1] :b '(1)} :a 2 :b 2) => '{:a [1 2] :b (2 1)}
+  (subject/conj-into {:a [1] :b '(1)} :a 2 :b 2) => (just {:a vector? :b list?})
+
+  (subject/conj-into {:a [1], :b [55] :c 'blah} :a 2 :b 56) => {:a [1 2], :b [55 56], :c 'blah})
+
+(fact "map-difference"
+  (subject/map-difference {} {}) => {}
+  (subject/map-difference {:a 1} {}) => {:a 1}
+  (subject/map-difference {:a 1} {:a ..irrelevant..}) => {}
+  (subject/map-difference {} {:a ..irrelevant..}) => {}
+
+  (subject/map-difference {:a 1, :b 2, :c 3} {:a ..irrelevant.., :c ..irrelevant.., :d ..irrelevant..}) => {:b 2})
+
+
+
 (fact "1.4 doesn't allow duplicates in hash-map arguments, so we have an alternative"
   (subject/hash-map-duplicates-ok) => {} 
   (subject/hash-map-duplicates-ok :a 1 :b 2) => {:a 1 :b 2}
