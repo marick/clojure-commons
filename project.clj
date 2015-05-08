@@ -10,7 +10,8 @@
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
                  [environ "1.0.0"]
                  [marick/suchwow "2.1.1" :exclusions [org.clojure/clojure]]
-                 [slingshot "0.12.1"]]
+                 [slingshot "0.12.1"]
+                 [commons-codec/commons-codec "1.10"]]
 
   :profiles {:dev {:dependencies [[midje "2.0.0-SNAPSHOT" :exclusions [org.clojure/clojure]]]}
              :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
