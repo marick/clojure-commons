@@ -26,7 +26,7 @@
    
    Stops checking after the first success. A predicate created from
    no arguments always returns `true`."
-  [preds]
+  [& preds]
   (if (empty? preds)
     (constantly true)
     (fn [arg]
@@ -34,4 +34,3 @@
         (cond (empty? preds)  false
               (candidate arg) true
               :else           (recur remainder))))))
-
