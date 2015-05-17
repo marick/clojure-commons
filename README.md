@@ -5,6 +5,7 @@ backward compatibility is very likely going forward.
 
 Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.4+  
 For lein: [marick/clojure-commons "0.9.0"]     
+License: [MIT](http://en.wikipedia.org/wiki/MIT_License)        
 [API docs](http://marick.github.io/clojure-commons/)
 
 [![Build Status](https://travis-ci.org/marick/clojure-commons.png?branch=master)](https://travis-ci.org/marick/clojure-commons)
