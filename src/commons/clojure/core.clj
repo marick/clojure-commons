@@ -7,7 +7,7 @@
             ;; update clojure.core documentation
             such.better-doc))
 
-(immigrate/selection 'clojure.set '[union difference subset? intersection])
+(immigrate/selection 'clojure.set '[union difference subset? intersection rename-keys])
 (immigrate/selection 'clojure.pprint '[pprint cl-format])
 (immigrate/selection 'slingshot.slingshot '[try+ throw+])
 

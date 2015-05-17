@@ -22,3 +22,7 @@
 (fact "some clojure.pprint functions are immigrated"
   (cl-format nil "1: ~A" 1) => "1: 1")
 
+;;; random imports
+
+(fact 
+  (rename-keys {:a 1} {:a :aa}) => {:aa 1})
