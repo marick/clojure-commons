@@ -1,22 +1,37 @@
 (ns commons.clojure.core
   "Functions I wouldn't mind seeing in clojure.core"
   (:require [such.immigration :as immigrate]
-            ;; individual requires are needed for codox
-            clojure.set clojure.pprint slingshot.slingshot such.shorthand such.symbols
-            such.types such.vars such.versions
-            ;; update clojure.core documentation
+            ;; This updates clojure.core's documentation
             such.better-doc))
 
-(immigrate/selection 'clojure.set '[union difference subset? intersection rename-keys])
-(immigrate/selection 'clojure.pprint '[pprint cl-format])
-(immigrate/selection 'slingshot.slingshot '[try+ throw+])
+;;; Other people's code
 
-;; Grab suchwow functions
-(immigrate/namespaces 'such.shorthand 'such.types 'such.wide-domains)
+(immigrate/import-vars [clojure.set
+                          union difference subset? intersection rename-keys]
+                       [clojure.pprint
+                          pprint cl-format]
+                       [slingshot.slingshot
+                          try+ throw+]
+                       [swiss.arrows
+                          -<> -!> -!>> -<>> some-<> some-<>>])
+(immigrate/import-prefixed-vars clojure.string str-)
 
-;; And selected local functions:
-(immigrate/namespaces 'commons.control-flow)
-(immigrate/namespaces 'commons.clojure.backwards-compatibility
-                      'commons.environment
-                      'commons.random)
+
+;; Suchwow code
+
+(immigrate/import-vars [such.control-flow
+                         branch-on]
+                       [such.sequences
+                         bifurcate only]
+                       [such.vars
+                         has-root-value? root-value])
+
+
+(immigrate/import-all-vars such.environment
+                           such.shorthand
+                           such.random
+                           such.types
+                           such.wide-domains
+                           such.wrongness
+                           )
 

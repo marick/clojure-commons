@@ -1,6 +1,6 @@
 (ns commons.clojure.f-core
-  (:use midje.sweet))
-(require 'such.immigration)(such.immigration/namespaces-by-reference 'commons.clojure.core)
+  (:use midje.sweet)
+  (:use commons.clojure.core))
 
 (fact "checks each pred against the result of the first expression, returning if it finds a match" 
   (branch-on "abcde" 
