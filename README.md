@@ -1,10 +1,10 @@
 # clojure-commons
 
-Clojure code I use a lot. Currently under construction. However,
-backward compatibility is very likely going forward.
+Clojure code I use a lot, condensed into a "favorite functions"
+namespace.
 
-Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.4+  
-For lein: [marick/clojure-commons "0.9.0"]     
+Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.5+  
+For lein: [marick/clojure-commons "1.0.0"]     
 License: [MIT](http://en.wikipedia.org/wiki/MIT_License)        
 [API docs](http://marick.github.io/clojure-commons/)
 
@@ -22,7 +22,7 @@ Documentations for those functions is included in the [commons.clojure.core docu
 
 -------
 
-Certain functions in this library are copied or derived from the
+Certain additional functions in this library are copied or derived from the
 [useful](https://github.com/amalloy/useful) library, whose license
 (Eclipse 1.0) can be found in the `LICENSE.useful` file. They are
 identified in the source.
