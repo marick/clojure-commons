@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "1.0.0"
+(defproject marick/clojure-commons "1.0.1"
   :description "A commons.clojure.core to :use everywhere"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
