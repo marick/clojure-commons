@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "3.1.1" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "3.4.0" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
 
   :profiles {:dev {:dependencies [[midje "1.7.0" :exclusions [org.clojure/clojure]]]}
