@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "1.0.1"
+(defproject marick/clojure-commons "1.1.0"
   :description "A commons.clojure.core to :use everywhere"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -8,8 +8,12 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "3.4.0" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "4.0.0" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
+
+  :repl-options {:init (do (require 'commons.doc)
+                          ;; List available api docs on repl startup:
+                          (such.doc/apis))}
 
   :profiles {:dev {:dependencies [[midje "1.8-alpha1" :exclusions [org.clojure/clojure]]]}
              :1.5.0 {:dependencies [[org.clojure/clojure "1.5.0"]]}
