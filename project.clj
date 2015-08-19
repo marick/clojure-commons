@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "4.0.0" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "4.1.0" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
 
   :repl-options {:init (do (require 'commons.doc)
