@@ -2,7 +2,23 @@
   "Functions I wouldn't mind seeing in clojure.core"
   (:require [such.immigration :as immigrate]
             ;; This updates clojure.core's documentation
-            such.better-doc))
+            such.better-doc
+            clojure.set
+            clojure.pprint
+            slingshot.slingshot
+            swiss.arrows
+            clojure.string
+            such.control-flow
+            such.sequences
+            such.vars
+            such.environment
+            such.shorthand
+            such.random
+            such.types
+            such.wide-domains
+            such.wrongness
+            such.imperfection))
+
 
 ;;; Other people's code
 
