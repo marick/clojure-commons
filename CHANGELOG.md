@@ -3,6 +3,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [1.1.4] - 2016-01-23
+- Bump to test a problem with clojars
+
 ## [1.1.2] - 2015-12-18
 - Bump version of suchwow
 
