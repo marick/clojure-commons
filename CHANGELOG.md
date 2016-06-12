@@ -3,6 +3,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [2.0.0] - 2016-06-12
+- CHANGE: Bump version of suchwow.
+- BREAKING: Drop support of Clojure 1.5
+
 ## [1.1.4] - 2016-01-23
 - Bump to test a problem with clojars
 
