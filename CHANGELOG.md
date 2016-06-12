@@ -3,6 +3,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [2.0.1] - 2016-06-12
+- CHANGE: Bump version of suchwow because of annoying circular dependency
+
 ## [2.0.0] - 2016-06-12
 - CHANGE: Bump version of suchwow.
 - BREAKING: Drop support of Clojure 1.5

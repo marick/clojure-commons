@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "2.0.0"
+(defproject marick/clojure-commons "2.0.1"
   :description "A commons.clojure.core to :use everywhere"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "5.1.1" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "5.1.2" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
 
   :repl-options {:init (do (require 'commons.doc)
@@ -30,8 +30,8 @@
           :output-dir "/var/tmp/clojure-commons-doc"
           :defaults {:doc/format :markdown}}
 
-  :aliases {"compatibility" ["with-profile" "+1.6:+1.7:+1.8" "midje" ":config" ".compatibility-test-config"]
-            "travis" ["with-profile" "+1.6:+1.7:+1.8" "midje"]}
+  :aliases {"compatibility" ["with-profile" "+1.6:+1.7:+1.8:+1.9" "midje" ":config" ".compatibility-test-config"]
+            "travis" ["with-profile" "+1.6:+1.7:+1.8:+1.9" "midje"]}
 
   ;; For Clojure snapshots
   :repositories {"sonatype-oss-public" "https://oss.sonatype.org/content/groups/public/"}
