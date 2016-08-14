@@ -3,6 +3,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [2.0.4] - 2016-08-13
+- Update dependency
+
 ## [2.0.3] - 2016-08-13
 - Clojure 1.9 `any?` is such a horrible name, but we must submit.
 
