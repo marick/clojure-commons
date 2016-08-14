@@ -15,7 +15,7 @@
                           ;; List available api docs on repl startup:
                           (such.doc/apis))}
 
-  :profiles {:dev {:dependencies [[midje "1.8.3" :exclusions [org.clojure/clojure]]]}
+  :profiles {:dev {:dependencies [[midje "1.9.0-alpha4" :exclusions [org.clojure/clojure]]]}
              :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}
