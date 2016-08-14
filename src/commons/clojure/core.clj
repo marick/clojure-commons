@@ -17,7 +17,8 @@
             such.types
             such.wide-domains
             such.wrongness
-            such.imperfection))
+            such.imperfection)
+  (:refer-clojure :exclude [any?]))
 
 
 ;;; Other people's code
