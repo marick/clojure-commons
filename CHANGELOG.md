@@ -3,6 +3,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [2.0.5] - 2016-08-21
+- Survive with clojure 1.9alpha11, part 1
+
 ## [2.0.4] - 2016-08-13
 - Update dependency
 
