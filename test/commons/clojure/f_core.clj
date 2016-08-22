@@ -1,6 +1,7 @@
 (ns commons.clojure.f-core
   (:use midje.sweet)
-  (:use commons.clojure.core))
+  (:use commons.clojure.core)
+  (:refer-clojure :except [any?]))
 
 (fact "checks each pred against the result of the first expression, returning if it finds a match" 
   (branch-on "abcde" 

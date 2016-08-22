@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "2.0.5"
+(defproject marick/clojure-commons "2.0.6"
   :description "A commons.clojure.core to :use everywhere"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -6,16 +6,16 @@
             :url "http://opensource.org/licenses/mit-license.php"
             :distribution :repo}
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "5.2.3" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "5.2.4" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
 
   :repl-options {:init (do (require 'commons.doc)
                           ;; List available api docs on repl startup:
                           (such.doc/apis))}
 
-  :profiles {:dev {:dependencies [[midje "1.9.0-alpha4" :exclusions [org.clojure/clojure]]]}
+  :profiles {:dev {:dependencies [[midje "1.9.0-alpha5" :exclusions [org.clojure/clojure]]]}
              :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}
