@@ -1,4 +1,4 @@
-(defproject marick/clojure-commons "2.0.6"
+(defproject marick/clojure-commons "3.0.0"
   :description "A commons.clojure.core to :use everywhere"
   :url "https://github.com/marick/clojure-commons"
   :pedantic? :warn
@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [swiss-arrows "1.0.0" :exclusions [org.clojure/clojure]]
-                 [marick/suchwow "5.2.4" :exclusions [org.clojure/clojure]]
+                 [marick/suchwow "6.0.0" :exclusions [org.clojure/clojure]]
                  [slingshot "0.12.2"]]
 
   :repl-options {:init (do (require 'commons.doc)
@@ -16,7 +16,6 @@
                           (such.doc/apis))}
 
   :profiles {:dev {:dependencies [[midje "1.9.0-alpha5" :exclusions [org.clojure/clojure]]]}
-             :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}
              :1.9 {:dependencies [[org.clojure/clojure "1.9.0-alpha10"]]}
@@ -30,8 +29,8 @@
           :output-dir "/var/tmp/clojure-commons-doc"
           :defaults {:doc/format :markdown}}
 
-  :aliases {"compatibility" ["with-profile" "+1.6:+1.7:+1.8:+1.9" "midje" ":config" ".compatibility-test-config"]
-            "travis" ["with-profile" "+1.6:+1.7:+1.8:+1.9" "midje"]}
+  :aliases {"compatibility" ["with-profile" "+1.7:+1.8:+1.9" "midje" ":config" ".compatibility-test-config"]
+            "travis" ["with-profile" "+1.7:+1.8:+1.9" "midje"]}
 
   ;; For Clojure snapshots
   :repositories {"sonatype-oss-public" "https://oss.sonatype.org/content/groups/public/"}

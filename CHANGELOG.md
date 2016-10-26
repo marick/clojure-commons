@@ -3,6 +3,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [3.0.0] - 2016-10-26
+- Compatible with Specter 0.13
+- Dump compatibility with Clojure 1.6
+
 ## [2.0.6] - 2016-08-22
 - Survive with clojure 1.9alpha11, part 2
 

@@ -3,7 +3,7 @@
 Clojure code I use a lot, condensed into a "favorite functions"
 namespace.
 
-Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.5+  
+Available via [clojars](https://clojars.org/marick/clojure-commons) for Clojure 1.7+  
 For lein: [marick/clojure-commons "2.0.6"]     
 License: [MIT](http://en.wikipedia.org/wiki/MIT_License)        
 [API docs](http://marick.github.io/clojure-commons/)
